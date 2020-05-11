@@ -1,0 +1,5 @@
+# typescript
+
+## Desgin Pattern
+
+- Singleton
