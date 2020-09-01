@@ -1,6 +1,10 @@
 ## Rust
 
 
+### TODO
+
+- [The Rust Programming Language](https://doc.rust-jp.rs/book/second-edition/)
+- [Rust by Example](https://doc.rust-jp.rs/rust-by-example-ja/)
 
 ### History
 
