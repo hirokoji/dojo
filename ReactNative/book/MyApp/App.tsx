@@ -9,73 +9,32 @@
  */
 
 import React from 'react';
-import {
-    StyleSheet,
-    View,
-    Text, Alert,
-} from 'react-native';
-import CustomLabel from "./components/CustomLabel";
-import {CountUp} from "./samples/CoutUp";
+import { StyleSheet, View, Text, Alert } from 'react-native';
+import { CountUp } from './samples/CoutUp';
+import { Profile } from './samples/Pofile';
 
-const lightTheme = StyleSheet.create({
-    containers: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'white',
-        color: 'black',
-    },
-    label: {
-        backgroundColor: 'white',
-        color: 'black',
-    },
-});
-
-const darkTheme = StyleSheet.create({
-    containers: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'black',
-        color: 'white',
-    },
-    label: {
-        backgroundColor: 'black',
-        color: 'white',
-    },
-});
-
-type Theme = typeof lightTheme | typeof darkTheme;
-type Context = {
-    theme: Theme;
-    setTheme: (newTheme: Theme) => void;
-};
-
-const ThemeContext = React.createContext<Context>({
-    theme: lightTheme,
-    setTheme: (_: typeof lightTheme | typeof darkTheme) => {},
-});
-
+import { ThemeContext, lightTheme, darkTheme } from './samples/ThemeContext';
 
 const App = () => {
     const [theme, setTheme] = React.useState(lightTheme);
 
     return (
-        <ThemeContext.Provider value={{theme, setTheme}}>
+        <ThemeContext.Provider value={{ theme, setTheme }}>
             <Text> Hoge </Text>
             <Text> Hoge </Text>
             <Text> Hoge </Text>
             <Text> Hoge </Text>
             <Text
                 onPress={() =>
-                    setTheme(theme === lightTheme ? darkTheme: lightTheme
-                    )}
+                    setTheme(theme === lightTheme ? darkTheme : lightTheme)
+                }
                 style={theme.label}
             >
                 Change Theme
             </Text>
-            <CountUp/>
-       </ThemeContext.Provider>
+            <Profile name="januswel" />
+            <CountUp />
+        </ThemeContext.Provider>
     );
 };
 
