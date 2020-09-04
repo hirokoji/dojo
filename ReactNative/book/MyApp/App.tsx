@@ -23,26 +23,17 @@ const App = () => {
     const [theme, setTheme] = React.useState(lightTheme);
 
     const ContextSample = () => {
-        const styles = StyleSheet.create({
-            box: {
-                flex: 1,
-                borderWidth: 1,
-                justifyContent: "center",
-                alignItems: "center",
-            },
-        });
 
         return (
-            <View style={styles.box}>
+            <View style={theme.containers}>
                 <Text
                     onPress={() =>
                         setTheme(theme === lightTheme ? darkTheme : lightTheme)
                     }
                     style={theme.label}
                 >
-                    Change Theme
+                    Click Me!! (Change Theme)
                 </Text>
-                <Profile name="januswel"/>
 
             </View>
         );

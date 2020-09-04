@@ -8,6 +8,7 @@ export const lightTheme = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'white',
         color: 'black',
+        borderWidth: 1,
     },
     label: {
         backgroundColor: 'white',
@@ -22,6 +23,7 @@ export const darkTheme = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'black',
         color: 'white',
+        borderWidth: 1,
     },
     label: {
         backgroundColor: 'black',
