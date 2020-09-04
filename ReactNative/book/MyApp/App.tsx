@@ -9,14 +9,32 @@
  */
 
 import React from 'react';
-import { StyleSheet, View, Text, Alert } from 'react-native';
+import {
+    View,
+    Text,
+    StyleSheet, Clipboard, SafeAreaView,
+} from 'react-native';
+
 import { CountUp } from './samples/CoutUp';
-import { Profile } from './samples/Pofile';
 import { Ref} from "./samples/Ref";
+import {FlatSample} from "./samples/FlatSample";
 
 import { ThemeContext, lightTheme, darkTheme } from './samples/ThemeContext';
+import {SectionSample} from "./samples/SectionSample";
+import {AlertSample} from "./samples/AlartSample";
+import {ClipboardSample} from "./samples/ClipboardSample";
 
 
+export const defaultStyles = StyleSheet.create({
+    box: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'white',
+        color: 'black',
+        borderWidth: 1,
+    },
+});
 
 const App = () => {
 
@@ -27,26 +45,27 @@ const App = () => {
         return (
             <View style={theme.containers}>
                 <Text
-                    onPress={() =>
-                        setTheme(theme === lightTheme ? darkTheme : lightTheme)
-                    }
-                    style={theme.label}
-                >
-                    Click Me!! (Change Theme)
+                    onPress={() => setTheme(theme === lightTheme ? darkTheme : lightTheme)}
+                    style={theme.label}>
+                    <Text style={{ fontWeight: "bold"}}> Click Me!! </Text>
+                    <Text> ~ change theme ~ </Text>
                 </Text>
-
             </View>
         );
     };
 
-
     return (
         <ThemeContext.Provider value={{ theme, setTheme }}>
-            <Ref/>
-            <ContextSample/>
-            <CountUp />
+                <Ref/>
+                <ContextSample/>
+                <CountUp />
+                <FlatSample/>
+                <SectionSample/>
+                <AlertSample/>
+                <ClipboardSample/>
         </ThemeContext.Provider>
     );
 };
 
 export default App;
+
