@@ -17,9 +17,6 @@ import {
 import CustomLabel from "./components/CustomLabel";
 import {CountUp} from "./samples/CoutUp";
 
-
-// Context Sample
-
 const lightTheme = StyleSheet.create({
     containers: {
         flex: 1,
@@ -64,9 +61,21 @@ const App = () => {
     const [theme, setTheme] = React.useState(lightTheme);
 
     return (
-        <>
+        <ThemeContext.Provider value={{theme, setTheme}}>
+            <Text> Hoge </Text>
+            <Text> Hoge </Text>
+            <Text> Hoge </Text>
+            <Text> Hoge </Text>
+            <Text
+                onPress={() =>
+                    setTheme(theme === lightTheme ? darkTheme: lightTheme
+                    )}
+                style={theme.label}
+            >
+                Change Theme
+            </Text>
             <CountUp/>
-       </>
+       </ThemeContext.Provider>
     );
 };
 
