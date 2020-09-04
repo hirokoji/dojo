@@ -9,6 +9,7 @@ export const lightTheme = StyleSheet.create({
         backgroundColor: 'white',
         color: 'black',
         borderWidth: 1,
+        width: '100%',
     },
     label: {
         backgroundColor: 'white',
@@ -24,6 +25,7 @@ export const darkTheme = StyleSheet.create({
         backgroundColor: 'black',
         color: 'white',
         borderWidth: 1,
+        width: '100%',
     },
     label: {
         backgroundColor: 'black',

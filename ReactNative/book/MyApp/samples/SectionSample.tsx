@@ -30,7 +30,7 @@ export const SectionSample = () => {
     ]
 
     return (
-        <View style={defaultStyles.box}>
+        <View style={defaultStyles.container}>
             <SectionList
                 sections={sections}
                 style={styles.container}

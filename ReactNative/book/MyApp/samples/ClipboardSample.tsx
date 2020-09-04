@@ -1,5 +1,6 @@
 import React from "react";
 import {AppState, Clipboard, StyleSheet, TouchableOpacity, View, Text} from "react-native";
+import {defaultStyles} from "../App";
 
 const styles = StyleSheet.create({
     container: {
@@ -25,7 +26,7 @@ export const ClipboardSample = () => {
     },[]);
 
     return (
-        <View style={styles.container}>
+        <View style={defaultStyles.container}>
             <TouchableOpacity
                 onPress={() => {
                     const newContent = 'Check your clipboard';

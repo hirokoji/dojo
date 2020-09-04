@@ -58,7 +58,7 @@ export const FlatSample = () => {
     }, [list]);
 
     return (
-        <View style={defaultStyles.box}>
+        <View style={defaultStyles.container}>
             <TouchableOpacity onPress={scrollToEnd}>
                 <Text> Scroll to End</Text>
             </TouchableOpacity>

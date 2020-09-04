@@ -1,5 +1,6 @@
 import React from "react";
 import {StyleSheet, Text, View} from "react-native";
+import {defaultStyles} from "../App";
 
 const styles = StyleSheet.create({
     container: {
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
     text3: {
         fontSize: 16,
     },
-    box: {
+    container: {
         borderWidth: 1,
     },
 });
@@ -56,14 +57,14 @@ export const CountUp = () => {
     }, [count]);
 
     return (
-        <View style={styles.container}>
+        <View style={defaultStyles.container}>
             <View style={styles.texts}>
                 <Text style={styles.text1}>tax</Text>
                 <Text style={styles.text2}>{count}</Text>
                 <Text style={styles.text3}>%</Text>
             </View>
             <Text
-                style={styles.box}
+                style={styles.container}
                 onPress={() => {
                     setCount(count + 1)
                 }}>

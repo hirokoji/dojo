@@ -9,11 +9,7 @@
  */
 
 import React from 'react';
-import {
-    View,
-    Text,
-    StyleSheet, Clipboard, SafeAreaView,
-} from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
 
 import { CountUp } from './samples/CoutUp';
 import { Ref} from "./samples/Ref";
@@ -26,12 +22,13 @@ import {ClipboardSample} from "./samples/ClipboardSample";
 
 
 export const defaultStyles = StyleSheet.create({
-    box: {
+    container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'white',
         color: 'black',
+        width: '100%',
         borderWidth: 1,
     },
 });
@@ -41,7 +38,6 @@ const App = () => {
     const [theme, setTheme] = React.useState(lightTheme);
 
     const ContextSample = () => {
-
         return (
             <View style={theme.containers}>
                 <Text
@@ -54,8 +50,11 @@ const App = () => {
         );
     };
 
+
+
     return (
         <ThemeContext.Provider value={{ theme, setTheme }}>
+            <SafeAreaView style={defaultStyles.container}>
                 <Ref/>
                 <ContextSample/>
                 <CountUp />
@@ -63,6 +62,7 @@ const App = () => {
                 <SectionSample/>
                 <AlertSample/>
                 <ClipboardSample/>
+            </SafeAreaView>
         </ThemeContext.Provider>
     );
 };
