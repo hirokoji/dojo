@@ -13,7 +13,7 @@ mod test{
     use super::*;
 
     #[test]
-    fn default_test() {
+    fn default_return_strigified_value() {
         assert_eq!(fizzbuzz(1), "1");
         assert_eq!(fizzbuzz(2), "2");
     }
@@ -35,4 +35,5 @@ mod test{
         assert_eq!(fizzbuzz(15), "FizzBuzz");
         assert_eq!(fizzbuzz(30), "FizzBuzz");
     }
+
 }
