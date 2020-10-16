@@ -1,10 +1,10 @@
 pub fn fizzbuzz(num:u32) -> String{
 
-    match num % 15 {
-        0 => String::from("FizzBuzz"),
-        3 | 6 | 9 | 12 => String::from("Fizz"),
-        5 | 10 => String::from("Buzz"),
-        _ => num.to_string()
+    match num {
+        v if v % 15 == 0 => String::from("FizzBuzz"),
+        v if v % 3 == 0 => String::from("Fizz"),
+        v if v % 5 == 0 => String::from("Buzz"),
+        v => v.to_string()
     }
 }
 pub fn fizzbuzz2(num:u32) -> String {
