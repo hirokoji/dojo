@@ -1,7 +1,10 @@
 extern crate fizzbuzz;
 
 fn main(){
-    for value in 1..=100{
-        println!("{}", fizzbuzz::fizzbuzz(value));
-    };
+    let ans = (1..=100).fold(
+        format!(""), |buf, value| {
+            format!("{} {}",buf, fizzbuzz::fizzbuzz(value))
+        });
+
+    println!("{}", ans);
 }
