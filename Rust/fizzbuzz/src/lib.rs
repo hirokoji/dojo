@@ -1,9 +1,9 @@
 pub fn fizzbuzz(num:u32) -> String{
 
     match (num % 3, num % 5) {
-        (0, 0) => String::from("FizzBuzz"),
-        (0, _) => String::from("Fizz"),
-        (_, 0) => String::from("Buzz"),
+        (0, 0) => "FizzBuzz".to_string(),
+        (0, _) => "Fizz".to_string(),
+        (_, 0) => "Buzz".to_string(),
         _ => num.to_string()
     }
 }
